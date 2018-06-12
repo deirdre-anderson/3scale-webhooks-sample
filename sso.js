@@ -193,7 +193,7 @@ function update_sso_client(access_token, client, id, error, next) {
 }
 
 function delete_sso_client(access_token, id, error, next) {
-  req.delete(util.format("https://%s/auth/admin/realms/%s/clients/%s", config.SSO_HOSTNAME, config.SSO_REALM, id), {
+  req.delete(util.format("https://%s/oauth2/v1/clients/%s", config.SSO_HOSTNAME, config.SSO_REALM, id), {
     headers: {
       "Authorization": "Bearer " + access_token
     }
