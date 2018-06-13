@@ -72,7 +72,7 @@ function handle_application(action, type, app, next) {
     client.redirectUris = [ app.redirect_url ];
   }
 
-  authenticate_to_sso(next, (access_token) => {
+  //authenticate_to_sso(next, (access_token) => {
     get_sso_client(client.clientId, access_token, next, (sso_client) => {
       if (action == "updated" || action == "created") {
         if (sso_client == null) {
@@ -103,7 +103,7 @@ function handle_application(action, type, app, next) {
         console.log("Unkown action '%s'", action);
         next(util.format("Unknown action '%s'", action));
       }
-    });
+    //});
   });
 }
 
