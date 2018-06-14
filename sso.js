@@ -192,10 +192,11 @@ function update_sso_client(access_token, client, id, error, next) {
   });
 }
 
-function delete_sso_client(access_token, id, error, next) {
+function delete_sso_client(id, error, next) {
   req.delete(util.format("https://%s/oauth2/v1/clients/%s", config.SSO_HOSTNAME, config.SSO_REALM, id), {
     headers: {
-      "Authorization": "Bearer " + access_token
+      "Authorization": "SSWS 00u-OOQ_nGdRVfE53RG5Kk-_3MeYnpvPMtjXQun2iA"
+      "accept": "application/json"
     }
   }, (err, response, body) => {
     if (err) {
